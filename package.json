@@ -1,0 +1,22 @@
+{
+  "name": "veryfirstpage",
+  "version": "0.1.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khuzhinru/veryfirstpage.git"
+  },
+  "author": "Ruslan Khuzhin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khuzhinru/veryfirstpage/issues"
+  },
+  "homepage": "https://github.com/khuzhinru/veryfirstpage#readme",
+  "devDependencies": {
+    "sass": "^1.32.8"
+  }
+}
