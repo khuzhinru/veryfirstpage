@@ -16,16 +16,7 @@ class SearchEngine {
     this.url = url;
     this.searchUrl = searchUrl;
 
-    let searchEngineElement = document.createElement("a");
-    searchEngineElement.classList.add("searchEngine");
-    searchEngineElement.textContent = name;
-    searchEngineElement.href = url;
-
-    searchEngineElement.onclick = (e) => {
-      e.preventDefault();
-      this.search();
-    };
-    searchController.searchEnginesContainer.appendChild(searchEngineElement);
+    this.createSearchEngineElement();
   }
 
   search() {
@@ -36,6 +27,18 @@ class SearchEngine {
       document.location.href = this.url;
     }
     searchController.searchInput.value = "";
+  }
+
+  createSearchEngineElement() {
+    let searchEngineElement = document.createElement("a");
+    searchEngineElement.classList.add("searchEngine");
+    searchEngineElement.textContent = this.name;
+    searchEngineElement.href = this.url;
+    searchEngineElement.onclick = (e) => {
+      e.preventDefault();
+      this.search();
+    };
+    searchController.searchEnginesContainer.appendChild(searchEngineElement);
   }
 }
 
