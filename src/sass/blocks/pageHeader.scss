@@ -1,0 +1,78 @@
+@use '../variables' as *;
+
+.pageHeader {
+  margin-bottom: 2rem;
+}
+
+.pageHeader__topbar {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.pageHeader__logo {
+  display: flex;
+  align-items: center;
+  color: $gray-90;
+  text-decoration: none;
+
+  h1 {
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  svg {
+    width: 64px;
+    height: 64px;
+
+    * {
+      transition: all 0.25s ease-out;
+    }
+
+    circle {
+      fill: $primary-light;
+    }
+
+    path {
+      fill: none;
+      stroke: $primary;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 20px;
+      pointer-events: none;
+    }
+
+    &:hover {
+      circle {
+        fill: $primary;
+      }
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+}
+
+.pageHeader__menu {
+  margin-left: auto;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+    text-decoration: none;
+    color: $gray-60;
+    transition: all 0.25s ease-out;
+
+    &:hover {
+      background-color: $gray-10;
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.2rem;
+    }
+  }
+}
