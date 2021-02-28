@@ -1,0 +1,23 @@
+@use '../variables' as *;
+
+.searchInputWrapper {
+  padding: 2rem 0;
+}
+
+.searchInput {
+  display: block;
+  width: 100%;
+  padding: 1.25rem;
+  border: none;
+  border-bottom: 1px solid $gray-10;
+  outline: none;
+  background-color: transparent;
+  font-size: 2rem;
+  text-align: center;
+  transition: all 0.25s ease-out;
+
+  &:focus {
+    border-color: $gray-20;
+    color: $gray-80;
+  }
+}
