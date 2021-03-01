@@ -1,4 +1,4 @@
-"use strict";
+/* "use strict";
 
 const searchController = {
   searchInput: document.getElementById("searchInput"),
@@ -16,7 +16,7 @@ class SearchEngine {
     this.url = url;
     this.searchUrl = searchUrl;
 
-    this.createSearchEngineElement();
+    this.toHTML();
   }
 
   search() {
@@ -29,7 +29,7 @@ class SearchEngine {
     searchController.searchInput.value = "";
   }
 
-  createSearchEngineElement() {
+  toHTML() {
     let searchEngineElement = document.createElement("a");
     searchEngineElement.classList.add("searchEngine");
     searchEngineElement.textContent = this.name;
@@ -50,4 +50,25 @@ searchController.createSearchEngine(
   "Yandex Translate",
   "https://translate.yandex.com",
   "https://translate.yandex.com/?lang=en-ru&text="
-);
+); */
+
+import { SearchInput } from "./src/js/classes/SearchInput.js";
+import { SearchEngines } from "./src/js/classes/SearchEngines.js";
+import { defaultSearchEngines } from "./src/js/defaultSearchEngines.js";
+
+const searchInput = new SearchInput(document.getElementById("searchInput"));
+const searchEngines = new SearchEngines(document.getElementById("searchEnginesContainer"));
+
+defaultSearchEngines.forEach((searchEngineObj) => {
+  searchEngines.create(searchEngineObj);
+});
+
+function search() {
+  let query = searchController.searchInput.value;
+  if (query !== "") {
+    document.location.href = this.searchUrl + query;
+  } else {
+    document.location.href = this.url;
+  }
+  searchController.searchInput.value = "";
+}
