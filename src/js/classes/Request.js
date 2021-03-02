@@ -1,9 +1,10 @@
 export class Request {
-  constructor(query, url) {
-    this.query = query;
+  constructor(url) {
     this.url = url;
     this.send = this.send.bind(this);
   }
 
-  send() {}
+  send() {
+    document.location.href = this.url;
+  }
 }

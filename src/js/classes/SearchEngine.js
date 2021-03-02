@@ -14,10 +14,6 @@ export class SearchEngine {
     searchEngineElement.classList.add("searchEngine");
     searchEngineElement.textContent = this.name;
     searchEngineElement.href = this.url;
-    searchEngineElement.onclick = (e) => {
-      e.preventDefault();
-      const request = new Request();
-    };
     return searchEngineElement;
   }
 }
