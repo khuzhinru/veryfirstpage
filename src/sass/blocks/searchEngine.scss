@@ -1,7 +1,10 @@
 @use '../variables' as *;
 
 .searchEngine {
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem 2rem;
   background-color: $gray-5;
   border-radius: $border-radius;
 
@@ -14,5 +17,16 @@
   &:hover {
     background-color: $gray-10;
     color: $gray-70;
+  }
+}
+
+.searchEngineAddBtn {
+  background-color: transparent;
+  border: 1px solid $gray-10;
+  border-style: dashed;
+  font-weight: normal;
+
+  &:hover {
+    background-color: $gray-5;
   }
 }

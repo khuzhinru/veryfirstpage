@@ -108,7 +108,10 @@ html {
 }
 
 .searchEngine {
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem 2rem;
   background-color: #fafafb;
   border-radius: 4px;
   text-decoration: none;
@@ -119,6 +122,72 @@ html {
 .searchEngine:hover {
   background-color: #f2f4f8;
   color: #4d5358;
+}
+
+.searchEngineAddBtn {
+  background-color: transparent;
+  border: 1px solid #f2f4f8;
+  border-style: dashed;
+  font-weight: normal;
+}
+.searchEngineAddBtn:hover {
+  background-color: #fafafb;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000090;
+}
+.modal__inner {
+  width: 90%;
+  max-width: 600px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-bottom: 0;
+  font-weight: bold;
+  /* border-bottom: 1px solid #ddd; */
+}
+.modal__title {
+  font-size: 1.2rem;
+}
+.modal__body {
+  padding: 1rem;
+}
+.modal__footer {
+  padding: 1rem;
+  padding-top: 0;
+  text-align: right;
+}
+.modal_show {
+  display: flex;
+}
+
+.form__form-group:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
