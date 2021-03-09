@@ -1,5 +1,19 @@
+@use '../variables' as *;
+
 .input {
-    display: block;
-    width: 100%;
-    padding: .5rem;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+
+  outline: none;
+  background-color: transparent;
+  border: 1px solid $gray-20;
+  border-radius: $border-radius;
+
+  transition: all 0.25s ease-out;
+
+  &:focus {
+    border-color: $primary;
+    color: $gray-80;
+  }
 }

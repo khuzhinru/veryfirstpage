@@ -60,17 +60,6 @@
   text-align: center;
 
   a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    border-radius: $border-radius;
-    text-decoration: none;
-    color: $gray-60;
-    transition: all 0.25s ease-out;
-
-    &:hover {
-      background-color: $gray-10;
-    }
-
     &:not(:last-child) {
       margin-right: 0.2rem;
     }

@@ -45,7 +45,7 @@ addSearchEngineModal.HTMLElement.body.innerHTML = `
 `;
 
 addSearchEngineModal.HTMLElement.footer.innerHTML = `
-  <button>Save</button>
+  <button class="btn btn_primary">Save</button>
 `;
 
 const addSearchEngineBtn = document.createElement('a');

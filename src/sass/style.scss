@@ -1,10 +1,11 @@
 @use './variables';
 @use './main';
 @use './blocks/container';
+@use './blocks/form.scss';
+@use './blocks/input.scss';
+@use './blocks/btn.scss';
 @use './blocks/pageHeader';
 @use './blocks/searchInput';
 @use './blocks/searchEngines';
 @use './blocks/searchEngine';
 @use './blocks/modal.scss';
-@use './blocks/form.scss';
-@use './blocks/input.scss';
