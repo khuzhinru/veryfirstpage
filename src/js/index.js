@@ -3,6 +3,7 @@ import { SearchEngines } from "./classes/SearchEngines.js";
 import { defaultSearchEngines } from "./defaultSearchEngines.js";
 import { Request } from "./classes/Request.js";
 import { Modal } from "./classes/Modal.js";
+import "../sass/style.scss";
 
 const searchInput = new SearchInput(document.getElementById("searchInput"));
 const searchEngines = new SearchEngines(document.getElementById("searchEnginesContainer"));
