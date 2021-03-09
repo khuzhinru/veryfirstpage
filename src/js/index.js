@@ -3,6 +3,7 @@ import { SearchEngines } from "./classes/SearchEngines.js";
 import { defaultSearchEngines } from "./defaultSearchEngines.js";
 import { Request } from "./classes/Request.js";
 import { Modal } from "./classes/Modal.js";
+import addSearchEngineFormHtml from "../html/addSearchEngineForm.html";
 import "../sass/style.scss";
 
 const searchInput = new SearchInput(document.getElementById("searchInput"));
@@ -26,26 +27,7 @@ const addSearchEngineModal = new Modal({
 });
 document.body.appendChild(addSearchEngineModal.HTMLElement.container);
 
-addSearchEngineModal.HTMLElement.body.innerHTML = `
-  <form id="addSearchEngineForm" class="form">
-    <div class="form__form-group">
-      <label class="form__label">Name:</label>
-      <input class="form__input input" type="text">
-    </div>
-    <div class="form__form-group">
-      <label class="form__label">Search URL:</label>
-      <input class="form__input input" type="text">
-    </div>
-    <div class="form__form-group">
-      <label class="form__label">Basic URL:</label>
-      <input class="form__input input" type="text">
-    </div>
-  </form>
-`;
-
-addSearchEngineModal.HTMLElement.footer.innerHTML = `
-  <button class="btn btn_primary">Save</button>
-`;
+addSearchEngineModal.HTMLElement.body.innerHTML = addSearchEngineFormHtml;
 
 const addSearchEngineBtn = document.createElement("a");
 addSearchEngineBtn.className = "searchEngine searchEngineAddBtn";
