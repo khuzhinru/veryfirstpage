@@ -4,8 +4,10 @@
   "description": "",
   "main": "",
   "scripts": {
-    "sass": "npx sass src/sass/style.scss css/style.css",
-    "watch:sass": "npx sass --watch src/sass/style.scss css/style.css"
+    "sass": "npx sass src/sass/style.scss ./dist/css/style.css",
+    "watch:sass": "npx sass --watch src/sass/style.scss ./dist/css/style.css",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
