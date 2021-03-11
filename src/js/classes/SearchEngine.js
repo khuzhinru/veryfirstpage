@@ -1,3 +1,5 @@
+import { Request } from "./Request";
+
 export class SearchEngine {
   constructor(searchEngineObj) {
     this.name = searchEngineObj.name;
@@ -5,15 +7,30 @@ export class SearchEngine {
     this.searchUrl = searchEngineObj.searchUrl;
 
     this.toHTML = this.toHTML.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.DOMElement = this.toHTML();
 
-    this.HTMLElement = this.toHTML();
+    this.refs = {};
+
+    this.setup();
+  }
+
+  setup() {
+    this.DOMElement.addEventListener('click', this.handleClick);
   }
 
   toHTML() {
     let searchEngineElement = document.createElement("a");
     searchEngineElement.classList.add("searchEngine");
     searchEngineElement.textContent = this.name;
-    searchEngineElement.href = this.url;
+    searchEngineElement.href = '#';
     return searchEngineElement;
+  }
+
+  handleClick(event) {
+    event.preventDefault();
+    console.log(event);
+    let request = new Request(this.searchUrl + this.refs.searchInput.value);
+    request.send();
   }
 }

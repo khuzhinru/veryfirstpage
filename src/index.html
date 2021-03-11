@@ -32,7 +32,8 @@
                     </nav>
                 </div>
                 <div class="searchInputWrapper">
-                    <input id="searchInput" class="input searchInput" type="text" placeholder="Введите запрос или URL..." autocomplete="off">
+                    <input id="searchInput" class="input searchInput" type="text"
+                        placeholder="Введите запрос или URL..." autocomplete="off">
                 </div>
             </div>
         </div>
@@ -40,9 +41,34 @@
     <section class="searchEngines">
         <div class="container">
             <div id="searchEnginesContainer" class="searchEngines__inner">
+                <a class="searchEngine searchEngineAddBtn" href="#" data-name="addBtn">Add new</a>
             </div>
         </div>
     </section>
+    <div id="addSearchEngineModal" class="modal">
+        <div class="modal__inner">
+            <div class="modal__header" data-name="header">
+                <div class="modal__title" data-name="title">New Search Engine</div>
+                <button class="modal_closeBtn" data-name="closeBtn">X</button>
+            </div>
+            <div class="modal__body" data-name="body">
+                <form id="addSearchEngineForm" class="form" autocomplete="off">
+                    <div class="form__form-group">
+                        <label class="form__label">Name:</label>
+                        <input class="form__input input" name="name" type="text">
+                    </div>
+                    <div class="form__form-group">
+                        <label class="form__label">Search URL:</label>
+                        <input class="form__input input" name="searchUrl" type="text">
+                    </div>
+                    <div class="form__form-group text_right">
+                        <button class="btn btn_primary" name="submit" type="button">Save</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal__footer" data-name="footer"></div>
+        </div>
+    </div>
 </body>
 
 </html>
