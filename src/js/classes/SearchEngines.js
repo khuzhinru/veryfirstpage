@@ -29,7 +29,7 @@ const defaultSearchEngines = [
 ];
 
 function getUserSearchEngines() {
-  const userSearchEngines = localStorage.getItem('searchEngines');
+  const userSearchEngines = localStorage.getItem("searchEngines");
   return userSearchEngines != null ? JSON.parse(userSearchEngines) : [];
 }
 
@@ -41,6 +41,8 @@ export class SearchEngines {
     this.refs = refs;
 
     this.setup();
+
+    window.s = this;
   }
 
   setup() {
@@ -51,13 +53,22 @@ export class SearchEngines {
     userSearchEngines.forEach((searchEngineObj) => {
       this.create(searchEngineObj);
     });
+    this.renderAll();
   }
 
   create(searchEngineObj) {
     let searchEngine = new SearchEngine(searchEngineObj);
     searchEngine.refs.searchInput = this.refs.searchInput;
     this.items.push(searchEngine);
-    localStorage.setItem('searchEngines', JSON.stringify(this.items));
-    this.DOMElement.append(searchEngine.DOMElement);
+    localStorage.setItem("searchEngines", JSON.stringify(this.items));
+  }
+
+  renderAll() {
+    const fragment = document.createDocumentFragment();
+    this.items.forEach((searchEngine) => {
+      fragment.append(searchEngine.DOMElement);
+    });
+    console.log(fragment);
+    this.DOMElement.append(fragment);
   }
 }
