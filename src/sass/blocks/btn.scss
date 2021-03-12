@@ -25,4 +25,12 @@
       background-color: $primary-60;
     }
   }
+
+  &_light {
+    background-color: $gray-10;
+
+    &:hover {
+      background-color: $gray-20;
+    }
+  }
 }

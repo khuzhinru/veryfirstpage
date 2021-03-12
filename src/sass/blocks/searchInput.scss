@@ -11,4 +11,8 @@
   border-radius: 0;
   font-size: 2rem;
   text-align: center;
+
+  &:focus {
+    padding-bottom: 1.4rem;
+  }
 }
