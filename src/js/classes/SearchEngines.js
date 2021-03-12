@@ -28,24 +28,36 @@ const defaultSearchEngines = [
   },
 ];
 
+function getUserSearchEngines() {
+  const userSearchEngines = localStorage.getItem('searchEngines');
+  return userSearchEngines != null ? JSON.parse(userSearchEngines) : [];
+}
+
 export class SearchEngines {
-  constructor(searchEnginesHTMLElement) {
+  constructor(searchEnginesHTMLElement, refs = {}) {
     this.items = [];
     this.DOMElement = searchEnginesHTMLElement;
     this.create = this.create.bind(this);
-    this.refs = {};
+    this.refs = refs;
+
+    this.setup();
+  }
+
+  setup() {
+    let userSearchEngines = getUserSearchEngines();
+    if (userSearchEngines.length < 1) {
+      userSearchEngines = defaultSearchEngines;
+    }
+    userSearchEngines.forEach((searchEngineObj) => {
+      this.create(searchEngineObj);
+    });
   }
 
   create(searchEngineObj) {
     let searchEngine = new SearchEngine(searchEngineObj);
     searchEngine.refs.searchInput = this.refs.searchInput;
     this.items.push(searchEngine);
-    this.DOMElement.insertBefore(searchEngine.DOMElement, this.refs.$addSearchEngineBtn);
-  }
-
-  createDefault() {
-    defaultSearchEngines.forEach((searchEngineObj) => {
-      this.create(searchEngineObj);
-    });
+    localStorage.setItem('searchEngines', JSON.stringify(this.items));
+    this.DOMElement.append(searchEngine.DOMElement);
   }
 }
