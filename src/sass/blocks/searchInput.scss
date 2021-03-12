@@ -14,5 +14,9 @@
 
   &:focus {
     padding-bottom: 1.4rem;
+
+    &::placeholder {
+      color: transparent;
+    }
   }
 }
