@@ -1,11 +1,11 @@
 import { Form } from "./Form";
 
 export class AddSearchEngineForm extends Form {
-    constructor(DOMElement) {
+    constructor(DOMElement, refs = {}) {
         super(DOMElement);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setup();
-        this.refs = {};
+        this.refs = refs;
     }
 
     setup() {
@@ -22,8 +22,10 @@ export class AddSearchEngineForm extends Form {
         if (this.refs.searchEngines != null) {
             this.refs.searchEngines.create({
                 name: this.elements.name.value,
-                searchUrl: this.elements.searchUrl.value
-            })
+                searchUrl: this.elements.searchUrl.value,
+                url: this.elements.url.value
+            });
+            this.refs.addSearchEngineModal.hide();
         }
     }
 }
