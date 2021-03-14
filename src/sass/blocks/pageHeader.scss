@@ -19,6 +19,7 @@
   h1 {
     margin: 0;
     margin-left: 1rem;
+    font-family: $font-primary;
     font-size: 1.25rem;
     font-weight: bold;
   }
@@ -59,7 +60,8 @@
   margin-left: auto;
   text-align: center;
 
-  a {
+  & > .menu__item {
+    display: inline;
     &:not(:last-child) {
       margin-right: 0.2rem;
     }

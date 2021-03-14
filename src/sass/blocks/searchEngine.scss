@@ -8,6 +8,7 @@
   background-color: $gray-5;
   border-radius: $border-radius;
 
+  font-family: $font-primary;
   text-decoration: none;
   color: $gray-60;
   font-weight: 600;
@@ -17,19 +18,5 @@
   &:hover {
     background-color: $gray-10;
     color: $gray-70;
-  }
-}
-
-.searchEngineAddBtn {
-  justify-content: center;
-  background-color: transparent;
-  border: 1px solid $gray-10;
-  border-style: dashed;
-
-  color: $gray-50;
-
-  &:hover {
-    background-color: transparent;
-    color: $gray-60;
   }
 }
