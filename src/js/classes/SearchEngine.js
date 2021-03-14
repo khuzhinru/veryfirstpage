@@ -16,20 +16,19 @@ export class SearchEngine {
   }
 
   setup() {
-    this.DOMElement.addEventListener('click', this.handleClick);
+    this.DOMElement.addEventListener("click", this.handleClick);
   }
 
   toHTML() {
     let searchEngineElement = document.createElement("a");
     searchEngineElement.classList.add("searchEngine");
     searchEngineElement.textContent = this.name;
-    searchEngineElement.href = '#';
+    searchEngineElement.href = "#";
     return searchEngineElement;
   }
 
   handleClick(event) {
     event.preventDefault();
-    console.log(event);
     let request = new Request(this.searchUrl + this.refs.searchInput.value);
     request.send();
   }

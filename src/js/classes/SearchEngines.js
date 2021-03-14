@@ -41,8 +41,6 @@ export class SearchEngines {
     this.refs = refs;
 
     this.setup();
-
-    window.s = this;
   }
 
   setup() {
@@ -68,7 +66,6 @@ export class SearchEngines {
     this.items.forEach((searchEngine) => {
       fragment.append(searchEngine.DOMElement);
     });
-    console.log(fragment);
     this.DOMElement.append(fragment);
   }
 }

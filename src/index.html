@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Very First Page – true home page of your life</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -25,15 +26,22 @@
                         </svg>
                         <h1>Very First Page</h1>
                     </a>
-                    <nav class="pageHeader__menu">
-                        <a class="btn" href="#">Link 1</a>
-                        <a class="btn" href="#">Link 2</a>
-                        <a class="btn" href="#">Link 3</a>
-                    </nav>
+                    <ul class="pageHeader__menu menu">
+                        <li class="menu__item"><a class="btn" href="#">Search</a></li>
+                        <li class="menu__item dropdown" data-init="auto" data-js='{"dropdown": {}}'>
+                            <a class="btn btn_icon btn_link" href="#" data-name="dropdownTrigger">
+                                <i class="bi-three-dots-vertical"></i>
+                            </a>
+                            <div class="dropdown__menu" data-name="dropdownMenu">
+                                <a class="dropdown__item" href="#" data-name="addSiteBtn">Add Site</a>
+                                <a class="dropdown__item" href="#" data-name="settingsBtn">Settings</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="searchInputWrapper">
-                    <input id="searchInput" class="input searchInput" type="text"
-                        placeholder="Введите запрос или URL..." autocomplete="off">
+                    <input id="searchInput" class="input searchInput" type="text" placeholder="Введите запрос или URL..." autocomplete="off"
+                        data-js='{"searchInput": {}}'>
                 </div>
             </div>
         </div>
@@ -41,36 +49,53 @@
     <section class="searchEngines">
         <div class="container">
             <div id="searchEnginesContainer" class="searchEngines__inner">
-                <a class="searchEngine searchEngineAddBtn" href="#" data-name="addBtn">Add new</a>
             </div>
         </div>
     </section>
-    <div id="addSearchEngineModal" class="modal">
+    <form id="addSearchEngineForm" class="form modal" autocomplete="off"
+        data-js='{"modal": {"trigger": "[data-name=\"addSiteBtn\"]"},"addSearchEngineForm": {}}'>
         <div class="modal__inner">
             <div class="modal__header" data-name="header">
                 <div class="modal__title" data-name="title">New Search Engine</div>
+                <button class="modal_closeBtn btn btn_light btn_icon" data-name="closeBtn"><i class="bi-x"></i></button>
+            </div>
+            <div class="modal__body" data-name="body">
+                <div class="form__form-group">
+                    <label class="form__label">Name:</label>
+                    <input class="form__input input" name="name" type="text" placeholder="Example">
+                </div>
+                <div class="form__form-group">
+                    <label class="form__label">Search URL:</label>
+                    <input class="form__input input" name="searchUrl" type="text" placeholder="https://example.com?q=">
+                </div>
+                <div class="form__form-group">
+                    <label class="form__label">Base URL:</label>
+                    <input class="form__input input" name="url" type="text" placeholder="https://example.com">
+                </div>
+                <div class="form__form-group text_right">
+                    <button class="btn btn_primary" name="submit" type="button">Save</button>
+                </div>
+            </div>
+            <div class="modal__footer display_none" data-name="footer"></div>
+        </div>
+    </form>
+    <div id="settingsModal" class="modal" data-init="auto" data-js='{"modal": {"trigger": "[data-name=\"settingsBtn\"]"}}'>
+        <div class="modal__inner">
+            <div class="modal__header" data-name="header">
+                <div class="modal__title" data-name="title">Settings</div>
                 <button class="modal_closeBtn btn btn_light" data-name="closeBtn">X</button>
             </div>
             <div class="modal__body" data-name="body">
-                <form id="addSearchEngineForm" class="form" autocomplete="off">
-                    <div class="form__form-group">
-                        <label class="form__label">Name:</label>
-                        <input class="form__input input" name="name" type="text" placeholder="Example">
-                    </div>
-                    <div class="form__form-group">
-                        <label class="form__label">Search URL:</label>
-                        <input class="form__input input" name="searchUrl" type="text" placeholder="https://example.com?q=">
-                    </div>
-                    <div class="form__form-group">
-                        <label class="form__label">Base URL:</label>
-                        <input class="form__input input" name="url" type="text" placeholder="https://example.com">
-                    </div>
-                    <div class="form__form-group text_right">
-                        <button class="btn btn_primary" name="submit" type="button">Save</button>
-                    </div>
-                </form>
+                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, temporibus quisquam alias molestias vitae amet, at repudiandae quasi
+                    suscipit odio eum soluta repellendus dicta natus incidunt fuga laudantium mollitia placeat unde doloremque! Ut quis sunt cumque ipsum
+                    praesentium soluta nam distinctio eos corrupti saepe dolores cum quas maxime assumenda facere nisi dignissimos, odio pariatur in ea
+                    illo?
+                    Non, repellat excepturi nemo molestias vel soluta similique quam in, pariatur amet sit, ipsum magni repudiandae? Culpa voluptatibus
+                    veritatis vero! Animi labore, quis ea neque delectus exercitationem. Ut optio distinctio consectetur mollitia autem illo dicta, dolore
+                    eum
+                    quaerat. Non temporibus ullam aut quam!</div>
             </div>
-            <div class="modal__footer display_none" data-name="footer"></div>
+            <div class="modal__footer" data-name="footer"></div>
         </div>
     </div>
 </body>
