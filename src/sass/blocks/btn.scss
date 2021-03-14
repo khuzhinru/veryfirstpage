@@ -9,6 +9,7 @@
 
   text-decoration: none;
   color: $gray-60;
+  vertical-align: middle;
 
   cursor: pointer;
   transition: all 0.25s ease-out;
@@ -27,10 +28,28 @@
   }
 
   &_light {
-    background-color: $gray-10;
+    background-color: $gray-5;
 
     &:hover {
-      background-color: $gray-20;
+      background-color: $gray-10;
+    }
+  }
+
+  &_small {
+    font-size: 0.75rem;
+  }
+
+  &_icon {
+    [class^="bi-"] {
+      vertical-align: middle;
+    }
+  }
+
+  &_link {
+    padding: 0;
+
+    &:hover {
+      background-color: transparent;
     }
   }
 }
