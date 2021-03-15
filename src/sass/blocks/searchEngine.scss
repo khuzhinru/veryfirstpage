@@ -19,4 +19,10 @@
     background-color: $gray-10;
     color: $gray-70;
   }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+    margin-right: .5rem;
+  }
 }

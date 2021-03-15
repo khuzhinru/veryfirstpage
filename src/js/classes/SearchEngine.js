@@ -20,10 +20,20 @@ export class SearchEngine {
   }
 
   toHTML() {
-    let searchEngineElement = document.createElement("a");
+    const searchEngineElement = document.createElement("a");
     searchEngineElement.classList.add("searchEngine");
-    searchEngineElement.textContent = this.name;
     searchEngineElement.href = "#";
+
+    const img = document.createElement('img');
+    img.classList.add('searchEngine__img');
+    img.src = `${this.url}/favicon.ico`;
+    searchEngineElement.append(img);
+
+    const title = document.createElement('div');
+    title.classList.add('searchEngine__title');
+    title.textContent = this.name;
+    searchEngineElement.append(title);
+
     return searchEngineElement;
   }
 
