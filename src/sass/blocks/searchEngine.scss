@@ -1,6 +1,7 @@
 @use '../variables' as *;
 
 .searchEngine {
+  position: relative;
   display: flex;
   align-items: center;
   height: 5rem;
@@ -8,12 +9,8 @@
   background-color: $gray-5;
   border-radius: $border-radius;
 
-  font-family: $font-primary;
-  text-decoration: none;
-  color: $gray-60;
-  font-weight: 600;
-
   transition: all 0.25s ease-out;
+  cursor: pointer;
 
   &:hover {
     background-color: $gray-10;
@@ -23,6 +20,29 @@
   &__img {
     width: 24px;
     height: 24px;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    color: $gray-60;
+    font-weight: 600;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-family: $font-secondary;
+  }
+
+  &__editBtn {
+    padding: 0.5rem 0.25rem;
+    color: $gray-20;
+    cursor: pointer;
+    &:hover {
+      color: $gray-40;
+    }
   }
 }

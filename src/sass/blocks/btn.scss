@@ -38,6 +38,12 @@
   &_small {
     font-size: 0.75rem;
   }
+  &_big {
+    font-size: 1.25rem;
+  }
+  &_large {
+    font-size: 1.5rem;
+  }
 
   &_icon {
     [class^="bi-"] {
