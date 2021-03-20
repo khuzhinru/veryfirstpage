@@ -1,6 +1,6 @@
 import { Form } from "./Form";
 
-export class AddSearchEngineForm extends Form {
+export class SearchEngineForm extends Form {
   constructor(DOMElement, refs = {}) {
     super(DOMElement);
     this.handleSubmit = this.handleSubmit.bind(this);
