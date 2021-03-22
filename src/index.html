@@ -28,13 +28,13 @@
                     </a>
                     <ul class="pageHeader__menu menu">
                         <li class="menu__item"><a class="btn" href="#">Search</a></li>
-                        <li class="menu__item dropdown" data-name="dropdown" data-init="auto" data-js='{"dropdown": {}}'>
+                        <li class="menu__item dropdown" data-name="dropdown" data-js='{"dropdown": {}}'>
                             <a class="btn btn_icon btn_link" href="#" data-name="dropdownTrigger">
                                 <i class="bi-three-dots-vertical"></i>
                             </a>
                             <div class="dropdown__menu" data-name="dropdownMenu">
-                                <a class="dropdown__item" href="#" data-name="addSiteBtn">Add Site</a>
-                                <a class="dropdown__item" href="#" data-name="settingsBtn">Settings</a>
+                                <a class="dropdown__item" href="#" data-js='{"searchEngineFormTrigger": {"type": "add"}}'>Add Site</a>
+                                <a class="dropdown__item" href="#" data-js='{"trigger": {"target": "#settingsModal"}}'>Settings</a>
                             </div>
                         </li>
                     </ul>
@@ -52,34 +52,7 @@
             </div>
         </div>
     </section>
-    <form id="addSearchEngineForm" class="form modal" autocomplete="off"
-        data-js='{"modal": {"trigger": "[data-name=\"addSiteBtn\"]"},"addSearchEngineForm": {}}'>
-        <div class="modal__inner">
-            <div class="modal__header" data-name="header">
-                <div class="modal__title" data-name="title">New Search Engine</div>
-                <button class="modal_closeBtn btn btn_light btn_icon" data-name="closeBtn"><i class="bi-x"></i></button>
-            </div>
-            <div class="modal__body" data-name="body">
-                <div class="form__form-group">
-                    <label class="form__label">Name:</label>
-                    <input class="form__input input" name="name" type="text" placeholder="Example">
-                </div>
-                <div class="form__form-group">
-                    <label class="form__label">Search URL:</label>
-                    <input class="form__input input" name="searchUrl" type="text" placeholder="https://example.com?q=">
-                </div>
-                <div class="form__form-group">
-                    <label class="form__label">Base URL:</label>
-                    <input class="form__input input" name="url" type="text" placeholder="https://example.com">
-                </div>
-                <div class="form__form-group text_right">
-                    <button class="btn btn_primary" name="submit" type="button">Save</button>
-                </div>
-            </div>
-            <div class="modal__footer display_none" data-name="footer"></div>
-        </div>
-    </form>
-    <div id="settingsModal" class="modal" data-init="auto" data-js='{"modal": {"trigger": "[data-name=\"settingsBtn\"]"}}'>
+    <div id="settingsModal" class="modal" data-js='{"modal": {}}'>
         <div class="modal__inner">
             <div class="modal__header" data-name="header">
                 <div class="modal__title" data-name="title">Settings</div>
