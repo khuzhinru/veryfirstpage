@@ -1,28 +1,35 @@
 import { SearchInput } from "./classes/SearchInput";
 import { SearchEngines } from "./classes/SearchEngines";
 import { Modal } from "./classes/Modal";
-import { AddSearchEngineForm } from "./classes/addSearchEngineForm";
+import { SearchEngineForm } from "./classes/SearchEngineForm";
 import { Dropdown } from "./classes/Dropdown";
+import { SearchEngineFormTrigger } from "./classes/SearchEngineFormTrigger";
+import { Trigger } from "./classes/Trigger";
 
 export const blocks = {
   searchInput: SearchInput,
   searchEngines: SearchEngines,
   modal: Modal,
-  addSearchEngineForm: AddSearchEngineForm,
+  searchEngineForm: SearchEngineForm,
   dropdown: Dropdown,
+  searchEngineFormTrigger: SearchEngineFormTrigger,
+  trigger: Trigger
 };
 
-blocks.init = (DOMElement) => {
+window.weakMap = new WeakMap();
+
+blocks.init = (DOMElement, blockParams = {}) => {
   let initedBlocks = {};
-  const blockParams = JSON.parse(DOMElement.dataset.js);
   for (const name in blockParams) {
     initedBlocks[name] = new blocks[name](DOMElement, blockParams[name]);
   }
-  return Object.keys(initedBlocks).length > 1 ? initedBlocks : initedBlocks[Object.keys(initedBlocks)[0]];
+  window.weakMap.set(DOMElement, initedBlocks);
+  return initedBlocks;
+  /* return Object.keys(initedBlocks).length > 1 ? initedBlocks : initedBlocks[Object.keys(initedBlocks)[0]]; */
 };
 
 blocks.initAuto = () => {
-  document.querySelectorAll('[data-init="auto"]').forEach((DOMElement) => {
-    blocks.init(DOMElement);
+  document.querySelectorAll('[data-js]').forEach((DOMElement) => {
+    blocks.init(DOMElement, JSON.parse(DOMElement.dataset.js));
   });
 };
