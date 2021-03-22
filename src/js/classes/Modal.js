@@ -1,5 +1,5 @@
 export class Modal {
-  constructor(DOMElement, options) {
+  constructor(DOMElement) {
     this.isShow = false;
 
     this.toggle = this.toggle.bind(this);
@@ -14,14 +14,11 @@ export class Modal {
       body: this.DOMElement.querySelector('[data-name="body"]'),
       footer: this.DOMElement.querySelector('[data-name="footer"]'),
     };
-    this.options = options;
-    this.trigger = document.querySelector(this.options.trigger);
 
     this.setup();
   }
 
   setup() {
-    this.trigger.addEventListener("click", this.show);
     this.DOMChildren.closeBtn.addEventListener("click", this.hide);
   }
 
