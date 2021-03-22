@@ -8,13 +8,15 @@
   padding: 1rem 2rem;
   background-color: $gray-5;
   border-radius: $border-radius;
-
-  transition: all 0.25s ease-out;
   cursor: pointer;
 
   &:hover {
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
     background-color: $gray-10;
     color: $gray-70;
+    .searchEngine__editBtn {
+      display: block;
+    }
   }
 
   &__img {
@@ -33,15 +35,20 @@
     position: absolute;
     top: 0;
     right: 0;
-
     font-family: $font-secondary;
   }
 
   &__editBtn {
-    padding: 0.5rem 0.25rem;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.4rem 0.4rem;
     color: $gray-20;
+    font-family: $font-secondary;
     cursor: pointer;
     &:hover {
+      transition: color 0.25s ease-out;
       color: $gray-40;
     }
   }
