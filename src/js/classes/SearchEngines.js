@@ -55,7 +55,7 @@ export class SearchEngines {
   }
 
   create(searchEngineObj) {
-    let searchEngine = new SearchEngine(searchEngineObj);
+    let searchEngine = new SearchEngine({searchEngineObj});
     searchEngine.refs.searchInput = this.refs.searchInput;
     this.items.push(searchEngine);
     localStorage.setItem("searchEngines", JSON.stringify(this.items));
