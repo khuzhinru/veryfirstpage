@@ -16,12 +16,13 @@ export class SearchEngineFormTrigger {
     }
 
     handleClick() {
-        if (this.type === "add") {
-            if (this.searchEngineForm == null) {
-                this.searchEngineForm = new SearchEngineForm();
-            } else {
-                this.searchEngineForm.refs.modal.show();
-            }
+        if (this.searchEngineForm == null) {
+            this.searchEngineForm = new SearchEngineForm({
+                type: this.type,
+                site: this.site
+            });
+        } else {
+            this.searchEngineForm.refs.modal.show();
         }
     }
 }

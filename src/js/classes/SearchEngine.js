@@ -1,20 +1,26 @@
 import { Component } from "./Component";
 import { Request } from "./Request";
+import { blocks } from "../blocks.js";
 
 export class SearchEngine extends Component {
   constructor(props) {
     super(props);
-    this.name = props.searchEngineObj.name;
-    this.url = props.searchEngineObj.url;
-    this.searchUrl = props.searchEngineObj.searchUrl;
+    this.name = props.name;
+    this.url = props.url;
+    this.searchUrl = props.searchUrl;
     this.handleClick = this.handleClick.bind(this);
     this.setup();
-    console.log(this);
   }
 
   setup() {
     this.DOMElement = this.toHTML();
     this.DOMElement.addEventListener("click", this.handleClick);
+    blocks.init(this.DOMChildren.editBtn, {
+      searchEngineFormTrigger: {
+        type: "edit",
+        site: this
+      }
+    });
   }
 
   toHTML() {
@@ -45,7 +51,7 @@ export class SearchEngine extends Component {
       return;
     }
     event.preventDefault();
-    const request = new Request(this.searchUrl + this.refs.searchInput.value);
-    request.send();
+    const requestUrl = this.refs.searchInput.value === "" ? this.url : this.searchUrl + this.refs.searchInput.value
+    new Request(requestUrl).send();
   }
 }

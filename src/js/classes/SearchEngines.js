@@ -55,9 +55,26 @@ export class SearchEngines {
   }
 
   create(searchEngineObj) {
-    let searchEngine = new SearchEngine({searchEngineObj});
+    const searchEngine = new SearchEngine(searchEngineObj);
     searchEngine.refs.searchInput = this.refs.searchInput;
     this.items.push(searchEngine);
+    this.refreshLocalStorage();
+  }
+
+  delete(searchEngine) {
+    const filteredItems = this.items.filter((item) => {
+      return item.name !== searchEngine.name;
+    });
+    this.items = filteredItems;
+    this.refreshLocalStorage();
+  }
+
+  edit(searchEngine, searchEngineObj) {
+    this.delete(searchEngine);
+    this.create(searchEngineObj);
+  }
+  
+  refreshLocalStorage() {
     localStorage.setItem("searchEngines", JSON.stringify(this.items));
   }
 
@@ -66,6 +83,7 @@ export class SearchEngines {
     this.items.forEach((searchEngine) => {
       fragment.append(searchEngine.DOMElement);
     });
+    this.DOMElement.innerHTML = "";
     this.DOMElement.append(fragment);
   }
 }
