@@ -35,6 +35,16 @@
     }
   }
 
+  &_danger-light {
+    background-color: $danger-light;
+    color: $danger;
+
+    &:hover {
+      background-color: $danger;
+      color: $white;
+    }
+  }
+
   &_small {
     font-size: 0.75rem;
   }
