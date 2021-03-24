@@ -1,3 +1,3 @@
-## Very First Page
+## About
 
-Very First Page (Самая первая страница) – это простое приложение, которое помогает быстрее искать информацию в сети Интернет.
+**Very First Page** is a simple web application that helps you search for information faster on the Internet.

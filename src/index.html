@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very First Page – true home page of your life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header class="pageHeader">
+        <div class="container">
+            <div class="pageHeader__inner">
+                <div class="pageHeader__topbar">
+                    <a class="pageHeader__logo" href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                            <defs>
+                                <style>
+                                </style>
+                            </defs>
+                            <circle cx="200" cy="200" r="200" />
+                            <path
+                                d="M200,333.6807l43.37537-104.71741,23.50183-56.7384,25.261-60.9856A199.13854,199.13854,0,0,1,200,133.6807a199.13854,199.13854,0,0,1-92.13824-22.44141l25.261,60.9856,23.50183,56.7384a201.77138,201.77138,0,0,0,86.75074,0l23.50183-56.7384A199.66878,199.66878,0,0,1,200,183.6807a199.66878,199.66878,0,0,1-66.8772-11.45581" />
+                        </svg>
+                        <h1>Very First Page</h1>
+                    </a>
+                    <ul class="pageHeader__menu menu">
+                        <li class="menu__item"><a class="btn" href="/">Search</a></li>
+                        <li class="menu__item dropdown" data-name="dropdown" data-js='{"dropdown": {}}'>
+                            <a class="btn btn_icon btn_link" href="#" data-name="dropdownTrigger">
+                                <i class="bi-three-dots-vertical"></i>
+                            </a>
+                            <div class="dropdown__menu" data-name="dropdownMenu">
+                                <a class="dropdown__item" href="#" data-js='{"searchEngineFormTrigger": {"type": "add"}}'>Add Site</a>
+                                <a class="dropdown__item" href="#" data-js='{"trigger": {"target": "#aboutModal"}}'>About</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="searchInputWrapper">
+                    <input id="searchInput" class="input searchInput" type="text" placeholder="Введите запрос или URL..." autocomplete="off" autofocus>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="searchEngines">
+        <div class="container">
+            <div id="searchEnginesContainer" class="searchEngines__inner">
+            </div>
+        </div>
+    </section>
+    <div id="aboutModal" class="modal" data-js='{"modal": {}}'>
+        <div class="modal__inner">
+            <div class="modal__header" data-name="header">
+                <div class="modal__title" data-name="title">About</div>
+                <button class="modal__closeBtn btn btn_icon btn_link" data-name="closeBtn"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="modal__body" data-name="body">
+                <p>
+                    Very First Page is a simple web application that helps you search for information faster on the Internet.
+                </p>
+                <p>
+                    <small>
+                        Author: Ruslan Khuzhin<br>
+                        Build: 0.2.0 (March 24, 2021)<br>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

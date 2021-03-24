@@ -1,0 +1,56 @@
+@use '../variables' as *;
+
+.searchEngine {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem 2rem;
+  background-color: $gray-5;
+  border-radius: $border-radius;
+  cursor: pointer;
+
+  &:hover {
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    background-color: $gray-10;
+    color: $gray-70;
+    .searchEngine__editBtn {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    color: $gray-40;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    color: $gray-60;
+    font-weight: 600;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: $font-secondary;
+  }
+
+  &__editBtn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.4rem 0.4rem;
+    color: $gray-20;
+    font-family: $font-secondary;
+    cursor: pointer;
+    &:hover {
+      transition: color 0.25s ease-out;
+      color: $gray-40;
+    }
+  }
+}

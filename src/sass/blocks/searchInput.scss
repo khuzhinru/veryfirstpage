@@ -1,0 +1,28 @@
+@use '../variables' as *;
+
+.searchInputWrapper {
+  padding: 2rem 0;
+}
+
+.searchInput {
+  padding: 1.25rem;
+  border: none;
+  border-bottom: 1px solid $gray-10;
+  border-radius: 0;
+
+  font-family: $font-primary;
+  font-size: 2rem;
+  text-align: center;
+
+  &::placeholder {
+    color: $gray-50;
+  }
+
+  &:focus {
+    padding-bottom: 1.4rem;
+    &::placeholder {
+      transition: color .25s ease-out;
+      color: $gray-20;
+    }
+  }
+}
