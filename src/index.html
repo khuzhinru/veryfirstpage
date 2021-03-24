@@ -27,21 +27,20 @@
                         <h1>Very First Page</h1>
                     </a>
                     <ul class="pageHeader__menu menu">
-                        <li class="menu__item"><a class="btn" href="#">Search</a></li>
+                        <li class="menu__item"><a class="btn" href="/">Search</a></li>
                         <li class="menu__item dropdown" data-name="dropdown" data-js='{"dropdown": {}}'>
                             <a class="btn btn_icon btn_link" href="#" data-name="dropdownTrigger">
                                 <i class="bi-three-dots-vertical"></i>
                             </a>
                             <div class="dropdown__menu" data-name="dropdownMenu">
                                 <a class="dropdown__item" href="#" data-js='{"searchEngineFormTrigger": {"type": "add"}}'>Add Site</a>
-                                <a class="dropdown__item" href="#" data-js='{"trigger": {"target": "#settingsModal"}}'>Settings</a>
+                                <a class="dropdown__item" href="#" data-js='{"trigger": {"target": "#aboutModal"}}'>About</a>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="searchInputWrapper">
-                    <input id="searchInput" class="input searchInput" type="text" placeholder="Введите запрос или URL..." autocomplete="off"
-                        data-js='{"searchInput": {}}'>
+                    <input id="searchInput" class="input searchInput" type="text" placeholder="Введите запрос или URL..." autocomplete="off" autofocus>
                 </div>
             </div>
         </div>
@@ -52,23 +51,23 @@
             </div>
         </div>
     </section>
-    <div id="settingsModal" class="modal" data-js='{"modal": {}}'>
+    <div id="aboutModal" class="modal" data-js='{"modal": {}}'>
         <div class="modal__inner">
             <div class="modal__header" data-name="header">
-                <div class="modal__title" data-name="title">Settings</div>
-                <button class="modal_closeBtn btn btn_light" data-name="closeBtn">X</button>
+                <div class="modal__title" data-name="title">About</div>
+                <button class="modal__closeBtn btn btn_icon btn_link" data-name="closeBtn"><i class="bi bi-x"></i></button>
             </div>
             <div class="modal__body" data-name="body">
-                <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, temporibus quisquam alias molestias vitae amet, at repudiandae quasi
-                    suscipit odio eum soluta repellendus dicta natus incidunt fuga laudantium mollitia placeat unde doloremque! Ut quis sunt cumque ipsum
-                    praesentium soluta nam distinctio eos corrupti saepe dolores cum quas maxime assumenda facere nisi dignissimos, odio pariatur in ea
-                    illo?
-                    Non, repellat excepturi nemo molestias vel soluta similique quam in, pariatur amet sit, ipsum magni repudiandae? Culpa voluptatibus
-                    veritatis vero! Animi labore, quis ea neque delectus exercitationem. Ut optio distinctio consectetur mollitia autem illo dicta, dolore
-                    eum
-                    quaerat. Non temporibus ullam aut quam!</div>
+                <p>
+                    Very First Page is a simple web application that helps you search for information faster on the Internet.
+                </p>
+                <p>
+                    <small>
+                        Author: Ruslan Khuzhin<br>
+                        Build: 0.2.0 (23 Feb 2021)<br>
+                    </small>
+                </p>
             </div>
-            <div class="modal__footer" data-name="footer"></div>
         </div>
     </div>
 </body>
