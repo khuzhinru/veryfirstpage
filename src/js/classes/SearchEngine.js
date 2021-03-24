@@ -18,8 +18,8 @@ export class SearchEngine extends Component {
     blocks.init(this.DOMChildren.editBtn, {
       searchEngineFormTrigger: {
         type: "edit",
-        site: this
-      }
+        site: this,
+      },
     });
   }
 
@@ -29,9 +29,16 @@ export class SearchEngine extends Component {
     searchEngineElement.href = "#";
 
     const img = document.createElement("img");
-    img.classList.add("searchEngine__img");
     img.src = `${this.url}/favicon.ico`;
-    searchEngineElement.append(img);
+    img.onerror = () => {
+      const placeholder = document.createElement("i");
+      placeholder.className = "bi bi-globe2 searchEngine__img";
+      searchEngineElement.prepend(placeholder);
+    };
+    img.onload = () => {
+      img.classList.add("searchEngine__img");
+      searchEngineElement.prepend(img);
+    };
 
     const title = document.createElement("div");
     title.classList.add("searchEngine__title");
@@ -51,7 +58,7 @@ export class SearchEngine extends Component {
       return;
     }
     event.preventDefault();
-    const requestUrl = this.refs.searchInput.value === "" ? this.url : this.searchUrl + this.refs.searchInput.value
+    const requestUrl = this.refs.searchInput.value === "" ? this.url : this.searchUrl + this.refs.searchInput.value;
     new Request(requestUrl).send();
   }
 }
