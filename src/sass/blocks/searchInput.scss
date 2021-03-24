@@ -14,11 +14,15 @@
   font-size: 2rem;
   text-align: center;
 
+  &::placeholder {
+    color: $gray-50;
+  }
+
   &:focus {
     padding-bottom: 1.4rem;
-
     &::placeholder {
-      color: transparent;
+      transition: color .25s ease-out;
+      color: $gray-20;
     }
   }
 }
