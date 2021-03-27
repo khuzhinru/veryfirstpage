@@ -1,4 +1,4 @@
-import "../sass/style.scss";
+import "../scss/style.scss";
 import { blocks } from "./blocks";
 blocks.initAuto();
 
